@@ -78,6 +78,25 @@
             </div>
         </div>
     </nav>
+    <div class="container">
+        <div class="country">
+            @foreach ($countries as $country)
+            <div class="country-box">
+                <img src="{{ asset('images/countries/' . $country->image) }}" alt="{{ $country->name }}" />
+                <p>{{ $country->name }}</p>
+            </div>
+            @endforeach
+        </div>
+        <div class="add">
+            <form action="{{ route('countries.create') }}" method="GET">
+                @csrf
+                <div class="add-country">
+                    <button type="submit">Add Country</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
 
 </body>
 @if(session('success'))
