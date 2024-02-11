@@ -22,13 +22,29 @@
                 <label for="name">Country Name:</label>
                 <input id="name" type="text" name="name" required onclick="changeStyleName()" onkeyup="onKeyUpName()">
             </div>
+            <div class="desc-box">
+                <label for="desc">Country Description:</label>
+                <textarea id="desc" type="text" name="description" required onclick="changeStyleDesc()" onkeyup="onKeyUpDesc()"></textarea>
+            </div>
             <div class=" image-box">
                 <label for="image">Country Image:</label>
                 <input type="file" name="image" accept="image/*" required>
             </div>
-            <div class="path-box">
-                <label for="path">Page Path:</label>
-                <input id="path" type="text" name="path" required onclick="changeStylePath()" onkeyup="onKeyUpPath()">
+            <div class="total-box">
+                <label for="total">Total Medal:</label>
+                <input id="total" type="text" name="total_medal" required onclick="changeStyleTotal()" onkeyup="onKeyUpTotal()">
+            </div>
+            <div class="gold-box">
+                <label for="gold">Gold Medal:</label>
+                <input id="gold" type="text" name="gold_medal" required onclick="changeStyleGold()" onkeyup="onKeyUpGold()">
+            </div>
+            <div class="silver-box">
+                <label for="silver">Silver Medal:</label>
+                <input id="silver" type="text" name="silver_medal" required onclick="changeStyleSilver()" onkeyup="onKeyUpSilver()">
+            </div>
+            <div class="bronze-box">
+                <label for="bronze">Bronze Medal:</label>
+                <input id="bronze" type="text" name="bronze_medal" required onclick="changeStyleBronze()" onkeyup="onKeyUpBronze()">
             </div>
             <button type="submit" class="addCountry">Add Country</button>
         </form>
@@ -44,14 +60,54 @@
             nameInput.classList.add('clicked-style');
         }
 
-        function changeStylePath() {
-            var pathInput = document.getElementById('path');
-            pathInput.classList.add('clicked-style');
+        function changeStyleDesc() {
+            var descInput = document.getElementById('desc');
+            descInput.classList.add('clicked-style');
         }
 
-        function onKeyUpPath() {
-            var pathInput = document.getElementById('path');
-            pathInput.classList.add('clicked-style');
+        function onKeyUpDesc() {
+            var descInput = document.getElementById('desc');
+            descInput.classList.add('clicked-style');
+        }
+
+        function changeStyleTotal() {
+            var totalInput = document.getElementById('total');
+            totalInput.classList.add('clicked-style');
+        }
+
+        function onKeyUpTotal() {
+            var totalInput = document.getElementById('total');
+            totalInput.classList.add('clicked-style');
+        }
+
+        function changeStyleGold() {
+            var goldInput = document.getElementById('gold');
+            goldInput.classList.add('clicked-style');
+        }
+
+        function onKeyUpGold() {
+            var goldInput = document.getElementById('gold');
+            goldInput.classList.add('clicked-style');
+        }
+
+        function changeStyleSilver() {
+            var silverInput = document.getElementById('silver');
+            silverInput.classList.add('clicked-style');
+        }
+
+        function onKeyUpSilver() {
+            var silverInput = document.getElementById('silver');
+            silverInput.classList.add('clicked-style');
+        }
+
+        function changeStyleBronze() {
+            var bronzeInput = document.getElementById('bronze');
+            bronzeInput.classList.add('clicked-style');
+        }
+
+        function onKeyUpBronze() {
+            var bronzeInput = document.getElementById('bronze');
+            bronzeInput.classList.add('clicked-style');
         }
     </script>
 </body>

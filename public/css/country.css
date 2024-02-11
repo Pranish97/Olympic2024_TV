@@ -39,7 +39,7 @@
         overflow-y: hidden;
         padding-left: 5px;
         font-size: 15px;
-        margin-top: 30px;
+        margin-top: 20px;
     }
 
     .clicked-style {
@@ -50,6 +50,27 @@
         resize: none;
         overflow-y: hidden;
         outline: none;
+    }
+
+    .container .desc-box label{
+        margin-left: 50px;
+        width: 200px;
+        
+    }
+
+    .container .desc-box textarea{
+        width: 400px;
+        height: 35px;
+        margin-left: 10px;
+        border-radius: 0;
+        border-width: 0 0 1px;
+        padding-left: 0;
+        padding-right: 0;
+        resize: none;
+        overflow-y: hidden;
+        padding-left: 5px;
+        font-size: 15px;
+        margin-top: 20px;
     }
 
     .container .image-box label{
@@ -70,16 +91,16 @@
         overflow-y: hidden;
         padding-left: 5px;
         font-size: 15px;
-        margin-top: 30px;
+        margin-top: 20px;
     }
 
-    .container .path-box label{
+    .container .total-box label{
         margin-left: 50px;
         width: 200px;
         
     }
 
-    .container .path-box input{
+    .container .total-box input{
         width: 400px;
         height: 35px;
         margin-left: 10px;
@@ -91,14 +112,77 @@
         overflow-y: hidden;
         padding-left: 5px;
         font-size: 15px;
-        margin-top: 30px;
+        margin-top: 20px;
+    }
+
+    .container .gold-box label{
+        margin-left: 50px;
+        width: 200px;
+        
+    }
+
+    .container .gold-box input{
+        width: 400px;
+        height: 35px;
+        margin-left: 10px;
+        border-radius: 0;
+        border-width: 0 0 1px;
+        padding-left: 0;
+        padding-right: 0;
+        resize: none;
+        overflow-y: hidden;
+        padding-left: 5px;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+
+    .container .silver-box label{
+        margin-left: 50px;
+        width: 200px;
+        
+    }
+
+    .container .silver-box input{
+        width: 400px;
+        height: 35px;
+        margin-left: 10px;
+        border-radius: 0;
+        border-width: 0 0 1px;
+        padding-left: 0;
+        padding-right: 0;
+        resize: none;
+        overflow-y: hidden;
+        padding-left: 5px;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+
+    .container .bronze-box label{
+        margin-left: 50px;
+        width: 200px;
+        
+    }
+
+    .container .bronze-box input{
+        width: 400px;
+        height: 35px;
+        margin-left: 10px;
+        border-radius: 0;
+        border-width: 0 0 1px;
+        padding-left: 0;
+        padding-right: 0;
+        resize: none;
+        overflow-y: hidden;
+        padding-left: 5px;
+        font-size: 15px;
+        margin-top: 20px;
     }
 
     .addCountry{
         float: left;
         font-size: 17px;
         margin-left: 300px;
-        margin-top: 50px;
+        margin-top: 30px;
         width: 150px;
         height: 45px;
         border-radius: 10px;
