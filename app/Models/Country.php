@@ -10,5 +10,5 @@ class Country extends Model
     use HasFactory;
 
     protected $table = 'country';
-    protected $fillable = ['name', 'image', 'path'];
+    protected $fillable = ['name', 'image', 'description', 'total_medal', 'gold_medal', 'silver_medal', 'bronze_medal'];
 }

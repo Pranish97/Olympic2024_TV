@@ -32,7 +32,7 @@ body{
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
+    height: 100vh;
     width: 250px;
     padding: 10px 14px;
     background-color: var(--navbar-color);
@@ -149,88 +149,132 @@ header .image-text .header-text{
 }
 
 .container{
-    width: 1286px;
-    height: 100%;
+    width: 1250px;
+    min-height: 100vh;
     margin-left: 250px;
 }
 
-.container .country{
-    height: 120px;
-    white-space: nowrap;
-    overflow-x: auto;
-    border: 1px solid black;
-    display: flex;
-    width: 100%;
+.container .countryTitle{
+    margin-left: 100px;
+    margin-top: 30px;
 }
 
-.container .country .country-box{
-    flex-shrink: 0;
-    width: 130px;
-    height: 90px;
-    margin-left: 10px;
-    margin-top: 3.5px;
-    text-align: center; /* Center the contents horizontally */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.container .countryTitle h1{
+    font-size: 30px;
+}
+
+
+.container .country_image img{
+    width: 250px;
+    height: 130px;
     float: left;
-    margin-right: 5px;
-}
-
-.container .country .country-box button{
-    cursor: pointer;
-}
-
-.container .country img{
-    width: 120px;
-    height: 65px;
-    margin-left: 1px;
-    margin-top: 1px;
-}
-.container .country p{
-    margin-top: 3px;
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.container .add{
-    width: 100px;
-    height: 90px;
-    float: right;
-    margin-right: 50px;
     margin-top: 20px;
+    margin-left: 100px;
 }
 
-.container .add button{
-    background-color: white;
-    color: black;
-    height: 50px;
-    width: 110px;
-    border-radius: 10px;
-    border: 1px solid black;
-}
-
-.container .add button:hover{
-    background-color: var(--primary-color);
-}
-
-.container .add-link{
-    width: 100px;
-    height: 90px;
-    float: right;
-    margin-right: 50px;
+.container  p{
+    margin-left: 50px;
+    font-size: 15px;
+    width: 350px;
     margin-top: 20px;
+    text-align: justify;
+    float: left;
 }
 
-.container .add-link button{
-    background-color: white;
-    color: black;
-    height: 50px;
-    width: 110px;
-    border-radius: 10px;
+.container .total{
+    margin-top: 200px;
+    width: 270px;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 730px;
     border: 1px solid black;
+    border-radius: 5px;
+    margin-left: 110px;
 }
 
-.container .add-link button:hover{
-    background-color: var(--primary-color);
+.container .total img{
+    width: 268px;
+    height: 110px;
+    border-radius: 5px;
 }
+
+.container .total p{
+    margin-left: 55px;
+margin-top: 0px;
+}
+
+.container .gold{
+    width: 170px;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    margin-top: -150px;
+    border: 1px solid black;
+    border-radius: 5px;
+    float: left;
+    margin-left: 430px;
+}
+
+.container .gold img{
+    width: 158px;
+    height: 110px;
+    border-radius: 5px;
+    margin-left: 8px;
+}
+
+.container .gold p{
+    margin-left: 20px;
+margin-top: 0px;
+}
+
+
+.container .silver{
+    width: 170px;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    margin-top: -150px;
+    border: 1px solid black;
+    border-radius: 5px;
+    float: left;
+    margin-left: 650px;
+}
+
+.container .silver img{
+    width: 158px;
+    height: 110px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.container .silver p{
+    margin-left: 20px;
+margin-top: 0px;
+}
+
+.container .bronze{
+    width: 170px;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    margin-top: -150px;
+    border: 1px solid black;
+    border-radius: 5px;
+    float: left;
+    margin-left: 870px;
+}
+
+.container .bronze img{
+    width: 158px;
+    height: 110px;
+    border-radius: 5px;
+    margin-left: 8px;
+}
+
+.container .bronze p{
+    margin-left: 11px;
+margin-top: 0px;
+}
+
+

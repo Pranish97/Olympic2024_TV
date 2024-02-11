@@ -29,4 +29,7 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('/logout', 'logout')->name('logout');
     Route::get('/countries/create', 'country')->name('countries.create');
     Route::post('/countries/store', 'addCountry')->name('countries.store');
+    Route::get('/links/create', 'link')->name('link.create');
+    Route::post('/links/store', 'addLink')->name('link.store');
+    Route::get('/redirect-to-country/{countryId}', 'redirectToCountry')->name('redirect.to.country');
 });

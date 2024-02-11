@@ -8,9 +8,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     </script>
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="/css/countryView.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Welcome to Olympic TV</title>
+    <title>{{ $country->name }}</title>
 </head>
 
 <body>
@@ -18,7 +18,7 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="images/olympic.jpg" alt="logo" />
+                    <img src="/images/olympic.jpg" alt="logo" />
                 </span>
                 <div class=" text header-text">
                     <span class="name">Olympic TV</span>
@@ -79,52 +79,39 @@
         </div>
     </nav>
     <div class="container">
-        <div class="country">
-            @foreach ($countries as $country)
-            <div class="country-box">
-                <form action="{{ route('redirect.to.country', ['countryId' => $country->id]) }}" method="get">
-                    <button type="submit">
-                        <img src="{{ asset('images/countries/' . $country->image) }}" alt="{{ $country->name }}" />
-                        <p>{{ $country->name }}</p>
-                    </button>
-                </form>
-            </div>
-            @endforeach
+        <div class="countryTitle">
+            <h1>{{ $country->name }}</h1>
         </div>
 
-        <div class="add">
-            @if(auth()->check() && auth()->user()->role == 'Admin')
-            <form action="{{ route('countries.create') }}" method="GET">
-                @csrf
-                <div class="add-country">
-                    <button type="submit">Add Country</button>
-                </div>
-            </form>
-            @endif
+        <div class="country_image">
+            <img src="{{ asset('images/countries/' . $country->image) }}" alt="{{ $country->name }}" />
         </div>
 
-        <div class="add-link">
-            @if(auth()->check() && auth()->user()->role == 'Admin')
-            <form action="{{ route('link.create') }}" method="GET">
-                @csrf
-                <div class="add-links">
-                    <button type="submit">Add Link</button>
-                </div>
-            </form>
-            @endif
+        <p>{{$country->description}}</p>
+
+        <div class="total">
+            <img src="/images/total.jpg" />
+            <p>Total Medals: {{$country->total_medal}}</p>
         </div>
+
+        <div class="gold">
+            <img src="/images/gold.jpg" />
+            <p>Gold Medals: {{$country->gold_medal}}</p>
+        </div>
+
+        <div class="silver">
+            <img src="/images/silver.jpg" />
+            <p>Silver Medals: {{$country->silver_medal}}</p>
+        </div>
+
+        <div class="bronze">
+            <img src="/images/bronze.jpg" />
+            <p>Bronze Medals: {{$country->bronze_medal}}</p>
+        </div>
+
+
     </div>
 
-
 </body>
-@if(session('success'))
-<script>
-    toastr.options = {
-        "progressBar": true,
-        "closeButton": true,
-    }
-    toastr.success("{{ session('success') }}")
-</script>
-@endif
 
 </html>

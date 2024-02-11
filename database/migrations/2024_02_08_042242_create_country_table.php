@@ -17,7 +17,11 @@ class CreateCountryTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('image');
-            $table->string('path');
+            $table->string('description');
+            $table->string('total_medal');
+            $table->string('gold_medal');
+            $table->string('silver_medal');
+            $table->string('bronze_medal');
             $table->timestamps();
         });
     }
