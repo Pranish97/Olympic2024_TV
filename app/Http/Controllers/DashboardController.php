@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Country;
+use App\Models\Link;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Auth;
@@ -12,8 +13,9 @@ class DashboardController extends Controller
     public function dashboard()
     {
         $countries = Country::all();
+        $links = Link::all();
 
-        return view('dashboard', compact('countries'));
+        return view('dashboard', compact('countries', 'links'));
     }
 
     public function country()
@@ -54,6 +56,35 @@ class DashboardController extends Controller
     public function link()
     {
         return view('link');
+    }
+
+    public function addLink(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'link' => 'required|url|max:255',
+            'game' => 'required|string',
+            'country_id' => 'required|numeric',
+        ]);
+
+        // Extract video ID from YouTube URL
+        $videoId = $this->getYouTubeVideoId($request->link);
+
+        Link::create([
+            'title' => $request->title,
+            'link' => $request->link,
+            'video_id' => $videoId,
+            'game' => $request->game,
+            'country_id' => $request->country_id,
+        ]);
+
+        return redirect()->route('dashboard')->with('success', 'New Video added successfully!');
+    }
+
+    private function getYouTubeVideoId($url)
+    {
+        parse_str(parse_url($url, PHP_URL_QUERY), $params);
+        return $params['v'] ?? null;
     }
 
     public function logout()

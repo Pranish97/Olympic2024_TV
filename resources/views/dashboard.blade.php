@@ -113,17 +113,30 @@
             </form>
             @endif
         </div>
+
+        <div class="videos">
+            @foreach ($links as $link)
+            <div class="video-box">
+                <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/{{$link->video_id}}?AIzaSyDcKnS-6ylja0hFrNvQcp2qlWmQFr1t9Qo"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <p>{{ $link->title }}</p>
+            </div>
+            @endforeach
+        </div>
     </div>
 
 
 </body>
 @if(session('success'))
 <script>
-    toastr.options = {
-        "progressBar": true,
-        "closeButton": true,
-    }
-    toastr.success("{{ session('success') }}")
+toastr.options = {
+    "progressBar": true,
+    "closeButton": true,
+}
+toastr.success("{{ session('success') }}")
 </script>
 @endif
 
