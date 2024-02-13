@@ -18,101 +18,71 @@
 
         <form action="{{ route('link.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <div class="name-box">
-                <label for="name">Title:</label>
-                <input id="name" type="text" name="name" required onclick="changeStyleName()" onkeyup="onKeyUpName()">
+            <div class="title-box">
+                <label for="title">Title:</label>
+                <input id="title" type="text" name="title" required onclick="changeStyleTitle()"
+                    onkeyup="onKeyUpTitle()">
             </div>
-            <div class="desc-box">
-                <label for="desc">Country Description:</label>
-                <textarea id="desc" type="text" name="description" required onclick="changeStyleDesc()"
-                    onkeyup="onKeyUpDesc()"></textarea>
+            <div class="link-box">
+                <label for="link">YouTube Link:</label>
+                <input type="url" name="link" id="link" onclick="changeStyleLink()" onkeyup="onKeyUpLink()" required>
             </div>
-            <div class=" image-box">
-                <label for="image">Country Image:</label>
-                <input type="file" name="image" accept="image/*" required>
+            <div class="game-box">
+                <label for="game">Game:</label>
+                <select id="game" name="game">
+                    <option value="football">Football</option>
+                    <option value="athletics">Athletics</option>
+                    <option value="swimming">Swimming</option>
+                    <option value="basketball">Basketball</option>
+                </select>
             </div>
-            <div class="total-box">
-                <label for="total">Total Medal:</label>
-                <input id="total" type="text" name="total_medal" required onclick="changeStyleTotal()"
-                    onkeyup="onKeyUpTotal()">
+            <div class="id-box">
+                <label for="country_id">Country Id:</label>
+                <input id="country_id" type="number" name="country_id" required onclick="changeStyleId()"
+                    onkeyup="onKeyUpId()">
             </div>
-            <div class="gold-box">
-                <label for="gold">Gold Medal:</label>
-                <input id="gold" type="text" name="gold_medal" required onclick="changeStyleGold()"
-                    onkeyup="onKeyUpGold()">
-            </div>
-            <div class="silver-box">
-                <label for="silver">Silver Medal:</label>
-                <input id="silver" type="text" name="silver_medal" required onclick="changeStyleSilver()"
-                    onkeyup="onKeyUpSilver()">
-            </div>
-            <div class="bronze-box">
-                <label for="bronze">Bronze Medal:</label>
-                <input id="bronze" type="text" name="bronze_medal" required onclick="changeStyleBronze()"
-                    onkeyup="onKeyUpBronze()">
-            </div>
-            <button type="submit" class="addCountry">Add Country</button>
+            <button type="submit" class="addLink">Add Video</button>
         </form>
     </div>
     <script>
-    function changeStyleName() {
-        var nameInput = document.getElementById('name');
-        nameInput.classList.add('clicked-style');
+    function changeStyleTitle() {
+        var titleInput = document.getElementById('title');
+        titleInput.classList.add('clicked-style');
     }
 
-    function onKeyUpName() {
-        var nameInput = document.getElementById('name');
-        nameInput.classList.add('clicked-style');
+    function onKeyUpTitle() {
+        var titleInput = document.getElementById('title');
+        titleInput.classList.add('clicked-style');
     }
 
-    function changeStyleDesc() {
-        var descInput = document.getElementById('desc');
-        descInput.classList.add('clicked-style');
+    function changeStyleLink() {
+        var linkInput = document.getElementById('link');
+        linkInput.classList.add('clicked-style');
     }
 
-    function onKeyUpDesc() {
-        var descInput = document.getElementById('desc');
-        descInput.classList.add('clicked-style');
+    function onKeyUpLink() {
+        var linkInput = document.getElementById('link');
+        linkInput.classList.add('clicked-style');
     }
 
-    function changeStyleTotal() {
-        var totalInput = document.getElementById('total');
-        totalInput.classList.add('clicked-style');
+    function changeStyleGame() {
+        var gameInput = document.getElementById('game');
+        gameInput.classList.add('clicked-style');
     }
 
-    function onKeyUpTotal() {
-        var totalInput = document.getElementById('total');
-        totalInput.classList.add('clicked-style');
+    function onKeyUpGame() {
+        var gameInput = document.getElementById('game');
+        gameInput.classList.add('clicked-style');
     }
 
-    function changeStyleGold() {
-        var goldInput = document.getElementById('gold');
-        goldInput.classList.add('clicked-style');
+    function changeStyleId() {
+        var idInput = document.getElementById('id');
+        idInput.classList.add('clicked-style');
     }
 
-    function onKeyUpGold() {
-        var goldInput = document.getElementById('gold');
-        goldInput.classList.add('clicked-style');
-    }
-
-    function changeStyleSilver() {
-        var silverInput = document.getElementById('silver');
-        silverInput.classList.add('clicked-style');
-    }
-
-    function onKeyUpSilver() {
-        var silverInput = document.getElementById('silver');
-        silverInput.classList.add('clicked-style');
-    }
-
-    function changeStyleBronze() {
-        var bronzeInput = document.getElementById('bronze');
-        bronzeInput.classList.add('clicked-style');
-    }
-
-    function onKeyUpBronze() {
-        var bronzeInput = document.getElementById('bronze');
-        bronzeInput.classList.add('clicked-style');
+    function onKeyUpId() {
+        var idInput = document.getElementById('id');
+        idInput.classList.add('clicked-style');
     }
     </script>
 </body>

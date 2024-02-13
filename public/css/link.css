@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;1,100;1,200;1,300;1,400;1,600&display=swap');
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Montserrat', sans-serif;
+        background-color: rgb(211, 211, 214);
+    }
+
+    .container{
+        width: 50%;
+        height: 500px;
+        background-color: white;
+        margin-left: 400px;
+        margin-top: 100px;
+    }
+
+    .container h2{
+        text-align: center;
+        padding-top: 30px;
+        font-size: 30px;
+    }
+
+    .container .title-box label{
+        margin-left: 100px;
+        width: 200px;
+    }
+
+    .container .title-box input{
+        width: 400px;
+        height: 35px;
+        margin-left: 10px;
+        border-radius: 0;
+        border-width: 0 0 1px;
+        padding-left: 0;
+        padding-right: 0;
+        resize: none;
+        overflow-y: hidden;
+        padding-left: 5px;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+
+    .clicked-style {
+        width: 400px;
+        height: 35px;
+        margin-left: 10px;
+        border-bottom: 1px solid #0066cc;
+        resize: none;
+        overflow-y: hidden;
+        outline: none;
+    }
+
+    .container .link-box label{
+        margin-left: 100px;
+        width: 200px;
+    }
+
+    .container .link-box input{
+        width: 400px;
+        height: 35px;
+        margin-left: 10px;
+        border-radius: 0;
+        border-width: 0 0 1px;
+        padding-left: 0;
+        padding-right: 0;
+        resize: none;
+        overflow-y: hidden;
+        padding-left: 5px;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+
+    .container .game-box label{
+        margin-left: 100px;
+        width: 200px;
+    }
+
+    .container .game-box select{
+        width: 400px;
+        height: 35px;
+        margin-left: 10px;
+        border-radius: 0;
+        border-width: 0 0 1px;
+        padding-left: 0;
+        padding-right: 0;
+        resize: none;
+        overflow-y: hidden;
+        padding-left: 5px;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+
+    .container .id-box label{
+        margin-left: 100px;
+        width: 200px;
+    }
+
+    .container .id-box input{
+        width: 200px;
+        height: 35px;
+        margin-left: 10px;
+        border-radius: 0;
+        border-width: 0 0 1px;
+        padding-left: 0;
+        padding-right: 0;
+        resize: none;
+        overflow-y: hidden;
+        padding-left: 5px;
+        font-size: 15px;
+        margin-top: 20px;
+    }
+
+    .addLink{
+        float: left;
+        font-size: 17px;
+        margin-left: 300px;
+        margin-top: 50px;
+        width: 150px;
+        height: 45px;
+        border-radius: 10px;
+        background-color: #0066cc;
+        border: 1px solid white;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .addLink:hover {
+        background-color: white;
+        color: #0066cc;
+        border: 1px solid #0066cc;
+    }

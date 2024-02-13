@@ -231,6 +231,33 @@ header .image-text .header-text{
     border: 1px solid black;
 }
 
-.container .add-link button:hover{
+.container .add button:hover{
     background-color: var(--primary-color);
+
 }
+
+.container .videos{
+    margin-top: 110px;
+}
+
+.container .videos .video-box{
+    width: 351px;
+    height: 270px;
+    border: 1px solid black;
+    text-align: center;
+    align-items: center;
+    float: left;
+    margin-left: 40px;
+    margin-top:10px;
+}
+
+.container .videos iFrame{
+    width: 350px;
+    height: 210px;
+}
+
+.container .videos p{
+    margin-top: 8px;
+}
+
+
