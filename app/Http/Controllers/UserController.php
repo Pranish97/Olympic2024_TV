@@ -55,7 +55,7 @@ class UserController extends Controller
         // Your existing code for credentials validation
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route('dashboard')->with('success', 'User Logged In Successfully');
+            return redirect()->route('dashboard')->with('login', 'User Logged In Successfully');
         }
         return back()->with('error', 'Invalid User')->onlyInput('email');
     }

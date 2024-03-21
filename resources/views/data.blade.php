@@ -8,9 +8,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     </script>
-    <link rel="stylesheet" href="/css/countryView.css">
+    <link rel="stylesheet" href="/css/data.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>{{ $country->name }}</title>
+    <title>Data Manegement</title>
 </head>
 
 <body>
@@ -91,39 +91,36 @@
         </div>
     </nav>
     <div class="container">
-        <div class="countryTitle">
-            <h1>{{ $country->name }}</h1>
+        <div class="nav">
+            <ul class="data-links">
+                <li class="">
+                    <form action="{{ route('manage.link') }}" method="GET">
+                        @csrf
+                        <a href="{{ route('manage.link') }}">Manage Link</a>
+                    </form>
+                </li>
+                <li>
+                    <form action="{{ route('manage.countries') }}" method="GET">
+                        @csrf
+                        <a href="{{ route('manage.countries') }}">Manage Country</a>
+                    </form>
+
+                </li>
+                <li>
+                    <form action="{{ route('manage.schedule') }}" method="GET">
+                        @csrf
+                        <a href="{{ route('manage.schedule') }}">Manage Schedule</a>
+                    </form>
+                </li>
+                <li>
+                    <form action="{{ route('manage.news') }}" method="GET">
+                        @csrf
+                        <a href="{{ route('manage.news') }}">Manage News</a>
+                    </form>
+                </li>
+            </ul>
         </div>
-
-        <div class="country_image">
-            <img src="{{ asset('images/countries/' . $country->image) }}" alt="{{ $country->name }}" />
-        </div>
-
-        <p>{{$country->description}}</p>
-
-        <div class="total">
-            <img src="/images/total.jpg" />
-            <p>Total Medals: {{$country->total_medal}}</p>
-        </div>
-
-        <div class="gold">
-            <img src="/images/gold.jpg" />
-            <p>Gold Medals: {{$country->gold_medal}}</p>
-        </div>
-
-        <div class="silver">
-            <img src="/images/silver.jpg" />
-            <p>Silver Medals: {{$country->silver_medal}}</p>
-        </div>
-
-        <div class="bronze">
-            <img src="/images/bronze.jpg" />
-            <p>Bronze Medals: {{$country->bronze_medal}}</p>
-        </div>
-
-
     </div>
-
 </body>
 
 </html>

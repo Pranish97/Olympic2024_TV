@@ -8,9 +8,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     </script>
-    <link rel="stylesheet" href="/css/countryView.css">
+    <link rel="stylesheet" href="/css/admin/manageNews.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>{{ $country->name }}</title>
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <title>Data Manegement</title>
 </head>
 
 <body>
@@ -91,39 +92,98 @@
         </div>
     </nav>
     <div class="container">
-        <div class="countryTitle">
-            <h1>{{ $country->name }}</h1>
+        <div class="nav">
+            <ul class="data-links">
+                <li>
+                    <form action="{{ route('manage.link') }}" method="GET">
+                        @csrf
+                        <a href="{{ route('manage.link') }}">Manage Link</a>
+                    </form>
+                </li>
+                <li>
+                    <form action="{{ route('manage.countries') }}" method="GET">
+                        @csrf
+                        <a href="{{ route('manage.countries') }}">Manage Country</a>
+                    </form>
+
+                </li>
+                <li>
+                    <form action="{{ route('manage.schedule') }}" method="GET">
+                        @csrf
+                        <a href="{{ route('manage.schedule') }}">Manage Schedule</a>
+                    </form>
+                </li>
+                <li>
+                    <form action="{{ route('manage.news') }}" method="GET">
+                        @csrf
+                        <a href="{{ route('manage.news') }}">Manage News</a>
+                    </form>
+                </li>
+            </ul>
         </div>
-
-        <div class="country_image">
-            <img src="{{ asset('images/countries/' . $country->image) }}" alt="{{ $country->name }}" />
+        <div class="add-news">
+            <form action="{{ route('news.create') }}" method="GET">
+                @csrf
+                <div class="add-news">
+                    <button type="submit">Add News</button>
+                </div>
+            </form>
         </div>
+        <table class="table" id="myTable">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($news as $item)
+                <tr>
+                    <td>{{ $item->title }}</td>
+                    <td>
+                        <img src="{{ asset('images/news/' . $item->image) }}" alt="{{ $item->title }}">
 
-        <p>{{$country->description}}</p>
+                    </td>
+                    <td>{{ $item->description }}</td>
+                    <td>
+                        <form action="{{ route('news.edit', $item->id) }}" method="GET" style="display: inline;">
+                            @csrf
+                            <button type="submit" class="edit">Edit</button>
+                        </form>
 
-        <div class="total">
-            <img src="/images/total.jpg" />
-            <p>Total Medals: {{$country->total_medal}}</p>
-        </div>
+                        <form action="{{ route('news.delete', $item->id) }}" method="POST" style="display: inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="delete"
+                                onclick="return confirm('Are you sure you want to delete this news?')">Delete</button>
+                        </form>
+                    </td>
 
-        <div class="gold">
-            <img src="/images/gold.jpg" />
-            <p>Gold Medals: {{$country->gold_medal}}</p>
-        </div>
-
-        <div class="silver">
-            <img src="/images/silver.jpg" />
-            <p>Silver Medals: {{$country->silver_medal}}</p>
-        </div>
-
-        <div class="bronze">
-            <img src="/images/bronze.jpg" />
-            <p>Bronze Medals: {{$country->bronze_medal}}</p>
-        </div>
-
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
 
     </div>
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#myTable').DataTable();
 
+    });
+    </script>
+</body>
+@if(session('success'))
+<script>
+toastr.options = {
+    "progressBar": true,
+    "closeButton": true,
+}
+toastr.success("{{ session('success') }}")
+</script>
+@endif
 </body>
 
 </html>

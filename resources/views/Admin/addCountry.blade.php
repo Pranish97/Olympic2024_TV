@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     </script>
-    <link rel="stylesheet" href="/css/country.css">
+    <link rel="stylesheet" href="/css/addCountry.css">
     <title>Add Country</title>
 </head>
 

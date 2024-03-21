@@ -8,9 +8,10 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     </script>
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="/css/admin/manageSchedule.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Welcome to FunOlympic TV</title>
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+    <title>Data Management</title>
 </head>
 
 <body>
@@ -91,75 +92,92 @@
         </div>
     </nav>
     <div class="container">
-        <div class="country">
-            @foreach ($countries as $country)
-            <div class="country-box">
-                <form action="{{ route('redirect.to.country', ['countryId' => $country->id]) }}" method="get">
-                    <button type="submit">
-                        <img src="{{ asset('images/countries/' . $country->image) }}" alt="{{ $country->name }}" />
-                        <p>{{ $country->name }}</p>
-                    </button>
-                </form>
-            </div>
-            @endforeach
+        <div class="nav">
+            <ul class="data-links">
+                <li>
+                    <a href="{{ route('manage.link') }}">Manage Link</a>
+                </li>
+                <li>
+                    <a href="{{ route('manage.countries') }}">Manage Country</a>
+                </li>
+                <li>
+                    <a href="{{ route('manage.schedule') }}">Manage Schedule</a>
+                </li>
+                <li>
+                    <form action="{{ route('manage.news') }}" method="GET">
+                        @csrf
+                        <a href="{{ route('manage.news') }}">Manage News</a>
+                    </form>
+                </li>
+            </ul>
         </div>
-
-        <div class="data">
-            @if(auth()->check() && auth()->user()->role == 'Admin')
-            <form action="{{ route('data.manage') }}" method="GET">
-                @csrf
-                <div class="data-manage">
-                    <button type="submit">Manage Data</button>
+        <div class="add-schedule">
+            <form action="{{ route('schedule.create') }}" method="GET">
+                <div class="add-schedule">
+                    <button type="submit">Add Schedule</button>
                 </div>
             </form>
-            @endif
         </div>
 
+        <table class="table" id="myTable">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">teamA</th>
+                    <th scope="col">teamA_image</th>
+                    <th scope="col">teamB</th>
+                    <th scope="col">teamB_image</th>
+                    <th scope="col">Stadium</th>
+                    <th scope="col">League</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($schedules as $schedule)
+                <tr>
+                    <td>{{ $schedule->title }}</td>
+                    <td>{{ $schedule->teamA }}</td>
+                    <td>
+                        <img src="{{ asset('images/teams/' . $schedule->teamA_image) }}" alt="{{ $schedule->teamA }}" />
+                    </td>
+                    <td>{{ $schedule->teamB }}</td>
+                    <td>
+                        <img src="{{ asset('images/teams/' . $schedule->teamB_image) }}" alt="{{ $schedule->teamB }}" />
+                    </td>
+                    <td>{{ $schedule->stadium }}</td>
+                    <td>{{ $schedule->league }}</td>
+                    <td>{{ $schedule->time }}</td>
+                    <td>{{ $schedule->date }}</td>
+                    <td>
+                        <form action="{{ route('schedule.edit', $schedule->id) }}" method="GET"
+                            style="display: inline;">
+                            @csrf
+                            <button type="submit" class="edit">Edit</button>
+                        </form>
 
+                        <form action="{{ route('schedule.delete', $schedule->id) }}" method="POST"
+                            style="display: inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="delete"
+                                onclick="return confirm('Are you sure you want to delete this schedule?')">Delete</button>
+                        </form>
+                    </td>
 
-        <div class="schedule">
-            @foreach ($schedules as $schedule)
-            <div class="schedule-box">
-                <p class="league">{{$schedule->league}}</p>
-                <p class="stadium">{{$schedule->stadium}}</p>
-                <p class="title">{{$schedule->title}}</p>
-                <img class="imageA" src="{{ asset('images/teams/' . $schedule->teamA_image) }}">
-                <img class="imageB" src="{{ asset('images/teams/' . $schedule->teamB_image) }}">
-                <div class="time-box">
-                    <p>{{$schedule->time}}</p>
-                </div>
-                <p class="date">{{$schedule->date}}</p>
-            </div>
-            @endforeach
-        </div>
-
-
-
-
-        <div class="videos">
-            @foreach ($links as $link)
-            <div class="video-box">
-                <iframe width="560" height="315"
-                    src="https://www.youtube.com/embed/{{$link->video_id}}?AIzaSyDcKnS-6ylja0hFrNvQcp2qlWmQFr1t9Qo"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-                <p>{{ $link->title }}</p>
-            </div>
-            @endforeach
-        </div>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
 
-
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+    });
+    </script>
 </body>
-@if(session('login'))
-<script>
-toastr.options = {
-    "progressBar": true,
-    "closeButton": true,
-}
-toastr.success("{{ session('login') }}")
-</script>
-@endif
 
 </html>
