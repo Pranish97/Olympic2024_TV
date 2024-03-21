@@ -197,3 +197,8 @@
         color: #0066cc;
         border: 1px solid #0066cc;
     }
+
+    .image-box img{
+        width: 80px;
+        height: 40px;
+    }

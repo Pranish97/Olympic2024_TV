@@ -11,7 +11,7 @@
 :root{
     --body-color:#E4E9F7;
     --navbar-color: #FFF;
-    --primary-color:    #ffd699;
+    --primary-color:    #003399;
     --primary-color-light:#F6F5FF;
     --toggle-color:#DDD;
     --text-color: #707070;
@@ -140,7 +140,7 @@ header .image-text .header-text{
 
 .navbar li a:hover .icon,
 .navbar li a:hover .text{
-    color: black;
+    color:white;
     
 }
 
@@ -154,127 +154,29 @@ header .image-text .header-text{
     margin-left: 250px;
 }
 
-.container .countryTitle{
-    margin-left: 100px;
-    margin-top: 30px;
+.nav{
+    width: 1286px;
+    height: 50px;
+    background-color: var(--primary-color);
 }
 
-.container .countryTitle h1{
-    font-size: 30px;
+.data-links {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
 }
 
-
-.container .country_image img{
-    width: 250px;
-    height: 130px;
-    float: left;
-    margin-top: 20px;
-    margin-left: 100px;
+.data-links li {
+    margin-right: 10px;
+    margin-left: 40px;
+    color: white;
+    margin-top: 15px;
+}
+.data-links li a{
+    text-decoration: none;
+    color: white;
 }
 
-.container  p{
-    margin-left: 50px;
-    font-size: 15px;
-    width: 350px;
-    margin-top: 20px;
-    text-align: justify;
-    float: left;
+.data-links li a:hover{
+    color:rgb(215, 214, 214);
 }
-
-.container .total{
-    margin-top: 200px;
-    width: 270px;
-    height: 150px;
-    align-items: center;
-    justify-content: center;
-    margin-right: 730px;
-    border: 1px solid black;
-    border-radius: 5px;
-    margin-left: 110px;
-}
-
-.container .total img{
-    width: 268px;
-    height: 110px;
-    border-radius: 5px;
-}
-
-.container .total p{
-    margin-left: 55px;
-margin-top: 0px;
-}
-
-.container .gold{
-    width: 170px;
-    height: 150px;
-    align-items: center;
-    justify-content: center;
-    margin-top: -150px;
-    border: 1px solid black;
-    border-radius: 5px;
-    float: left;
-    margin-left: 430px;
-}
-
-.container .gold img{
-    width: 158px;
-    height: 110px;
-    border-radius: 5px;
-    margin-left: 8px;
-}
-
-.container .gold p{
-    margin-left: 20px;
-margin-top: 0px;
-}
-
-
-.container .silver{
-    width: 170px;
-    height: 150px;
-    align-items: center;
-    justify-content: center;
-    margin-top: -150px;
-    border: 1px solid black;
-    border-radius: 5px;
-    float: left;
-    margin-left: 650px;
-}
-
-.container .silver img{
-    width: 158px;
-    height: 110px;
-    border-radius: 5px;
-    margin-left: 5px;
-}
-
-.container .silver p{
-    margin-left: 20px;
-margin-top: 0px;
-}
-
-.container .bronze{
-    width: 170px;
-    height: 150px;
-    align-items: center;
-    justify-content: center;
-    margin-top: -150px;
-    border: 1px solid black;
-    border-radius: 5px;
-    float: left;
-    margin-left: 870px;
-}
-
-.container .bronze img{
-    width: 158px;
-    height: 110px;
-    border-radius: 5px;
-    margin-left: 8px;
-}
-
-.container .bronze p{
-    margin-left: 11px;
-margin-top: 0px;
-}
-
-

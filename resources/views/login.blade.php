@@ -17,7 +17,7 @@
         <div class="login-form">
             <form action="{{ route('loginUser') }}" enctype="multipart/form-data" method="post"">
             @csrf
-            <p class=" login">Login To Olympic TV</p>
+            <p class=" login">Login To FunOlympic TV</p>
                 <p class="welcome">Welcome Back</p>
                 <div class=" mb-3" ">
             <label class=" emailTitle">Email address</label>
