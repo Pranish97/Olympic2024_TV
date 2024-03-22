@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,4 +62,9 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/news/{id}/edit', 'editNews')->name('news.edit');
     Route::put('/news/{id}', 'updateNews')->name('news.update');
     Route::delete('/news/{id}', 'deleteNews')->name('news.delete');
+});
+
+Route::controller(ProfileController::class)->group(function () {
+    Route::get('/profile', 'profile')->name('profile');
+    Route::put('/update-profile/{id}', 'updateProfile')->name('update.profile');
 });
