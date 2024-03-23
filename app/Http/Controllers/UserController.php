@@ -24,10 +24,11 @@ class UserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'country' => ['required', 'string'],
+            'phone_number' => ['required', 'string'],
+            'password' => ['required', 'string', 'min:8', 'confirmed']
         ]);
 
-        // Check if the email already exists
         $existingUser = User::where('email', $request->email)->first();
 
         if ($existingUser) {
@@ -37,12 +38,14 @@ class UserController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password,
+            'country' => $request->country,
+            'phone_number' => $request->phone_number,
+            'password' => $request->password
         ]);
 
-
-        return redirect('/register')->with('success', 'Welcome! User have successfully register to Olympic TV');
+        return redirect('/register')->with('success', 'Welcome! User have successfully registered to Olympic TV');
     }
+
 
     public function loginUser(Request $request)
     {

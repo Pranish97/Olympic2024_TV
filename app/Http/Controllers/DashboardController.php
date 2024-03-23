@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Country;
 use App\Models\Link;
+use App\Models\News;
 use App\Models\Schedule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -16,8 +17,9 @@ class DashboardController extends Controller
         $countries = Country::all();
         $links = Link::all();
         $schedules = Schedule::all();
+        $news = News::all();
 
-        return view('dashboard', compact('countries', 'links', 'schedules'));
+        return view('dashboard', compact('countries', 'links', 'schedules', 'news'));
     }
 
 
