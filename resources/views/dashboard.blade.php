@@ -133,17 +133,24 @@
             @endforeach
         </div>
 
+        <div class="news">
+            <h2>News</h2>
+            @foreach ($news as $iteam)
+            <div class="news-box">
+                <img src="{{ asset('images/news/' . $iteam->image) }}" alt="{{ $iteam->title }}">
+                <p>{{ $iteam->title }}</p>
+            </div>
+            @endforeach
+        </div>
+
 
 
 
         <div class="videos">
+            <h2>Videos</h2>
             @foreach ($links as $link)
             <div class="video-box">
-                <iframe width="560" height="315"
-                    src="https://www.youtube.com/embed/{{$link->video_id}}?AIzaSyDcKnS-6ylja0hFrNvQcp2qlWmQFr1t9Qo"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$link->video_id}}?AIzaSyDcKnS-6ylja0hFrNvQcp2qlWmQFr1t9Qo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 <p>{{ $link->title }}</p>
             </div>
             @endforeach
@@ -154,11 +161,11 @@
 </body>
 @if(session('login'))
 <script>
-toastr.options = {
-    "progressBar": true,
-    "closeButton": true,
-}
-toastr.success("{{ session('login') }}")
+    toastr.options = {
+        "progressBar": true,
+        "closeButton": true,
+    }
+    toastr.success("{{ session('login') }}")
 </script>
 @endif
 

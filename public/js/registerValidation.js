@@ -1,8 +1,11 @@
     let form = document.querySelector('form');
     let username = document.getElementById('name');
     let email = document.getElementById('email');
+    let country = document.getElementById('country');
+    let phone = document.getElementById('phone_number');
     let password = document.getElementById('password');
     let confpassword = document.getElementById('cpassword');
+
 
     form.addEventListener('submit', e => {
         e.preventDefault();
@@ -40,6 +43,8 @@
     const validateInputs = () => {
         const usernameValue = username.value.trim();
         const emailValue = email.value.trim();
+        const countryValue = country.value.trim();
+        const phoneValue = phone.value.trim();
         const passwordValue = password.value.trim();
         const confirmPasswordValue = confpassword.value.trim();
 
@@ -55,6 +60,18 @@
             setError(email, 'Provide a valid email address');
         } else {
             setSuccess(email);
+        }
+
+        if (countryValue === '') {
+            setError(country, 'Please Select a country');
+        } else {
+            setSuccess(country);
+        }
+
+        if (phoneValue === '') {
+            setError(phone, 'Phone Number is required');
+        } else {
+            setSuccess(phone);
         }
 
         if (passwordValue === '') {
@@ -74,6 +91,8 @@
         return (
             username.parentElement.classList.contains('success') &&
             email.parentElement.classList.contains('success') &&
+            country.parentElement.classList.contains('success') && 
+            phone.parentElement.classList.contains('success')&&
             password.parentElement.classList.contains('success') &&
             confpassword.parentElement.classList.contains('success')
         );
@@ -97,6 +116,17 @@
         emailInput.classList.add('clicked-style');
     }
 
+    function changeStylePhone() {
+        var phoneInput = document.getElementById('phone_number');
+        phoneInput.classList.add('clicked-style');
+    }
+    
+    function onKeyUpPhone() {
+        var phoneInput = document.getElementById('phone');
+        phoneInput.classList.add('clicked-style');
+    }
+
+    
     function changeStylePassword() {
         var passwordInput = document.getElementById('password');
         passwordInput.classList.add('clicked-style');
