@@ -119,6 +119,12 @@
                         <a href="{{ route('manage.news') }}">Manage News</a>
                     </form>
                 </li>
+                <li>
+                    <form action="{{ route('manage.player') }}" method="GET">
+                        @csrf
+                        <a href="{{ route('manage.player') }}">Manage Players</a>
+                    </form>
+                </li>
             </ul>
         </div>
         <div class="add-link">
@@ -135,6 +141,7 @@
                     <th scope="col">Title</th>
                     <th scope="col">Link</th>
                     <th scope="col">Game</th>
+                    <th scope="col">Live</th>
                     <th scope="col">Country ID</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -145,6 +152,7 @@
                     <td>{{ $link['title'] }}</td>
                     <td>{{ $link['link'] }}</td>
                     <td>{{ $link['game'] }}</td>
+                    <td>{{ $link['live'] }}</td>
                     <td>{{ $link['country_id'] }}</td>
                     <td>
                         <form action="{{ route('link.edit', $link->id) }}" method="GET" style="display: inline;">
@@ -155,8 +163,7 @@
                         <form action="{{ route('link.delete', $link->id) }}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="delete"
-                                onclick="return confirm('Are you sure you want to delete this link?')">Delete</button>
+                            <button type="submit" class="delete" onclick="return confirm('Are you sure you want to delete this link?')">Delete</button>
                         </form>
                     </td>
 
@@ -169,19 +176,19 @@
     </div>
     <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script>
-    $(document).ready(function() {
-        $('#myTable').DataTable();
+        $(document).ready(function() {
+            $('#myTable').DataTable();
 
-    });
+        });
     </script>
 </body>
 @if(session('success'))
 <script>
-toastr.options = {
-    "progressBar": true,
-    "closeButton": true,
-}
-toastr.success("{{ session('success') }}")
+    toastr.options = {
+        "progressBar": true,
+        "closeButton": true,
+    }
+    toastr.success("{{ session('success') }}")
 </script>
 @endif
 </body>

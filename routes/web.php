@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FootballController;
 use App\Http\Controllers\ProfileController;
 
 /*
@@ -31,6 +32,10 @@ Route::controller(DashboardController::class)->group(function () {
     Route::get('/logout', 'logout')->name('logout');
     Route::get('/data/manage', 'data')->name('data.manage');
     Route::get('/redirect-to-country/{countryId}', 'redirectToCountry')->name('redirect.to.country');
+});
+
+Route::controller(FootballController::class)->group(function () {
+    Route::get('/football', 'football')->name('football');
 });
 
 Route::controller(AdminController::class)->group(function () {
@@ -62,6 +67,13 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/news/{id}/edit', 'editNews')->name('news.edit');
     Route::put('/news/{id}', 'updateNews')->name('news.update');
     Route::delete('/news/{id}', 'deleteNews')->name('news.delete');
+
+    Route::get('/manage/player', 'managePlayer')->name('manage.player');
+    Route::get('/player/create', 'player')->name('player.create');
+    Route::post('/player/store', 'addPlayer')->name('player.store');
+    Route::get('/player/{id}/edit', 'editPlayer')->name('player.edit');
+    Route::put('/player/{id}', 'updatePlayer')->name('player.update');
+    Route::delete('/player/{id}', 'deletePlayer')->name('player.delete');
 });
 
 Route::controller(ProfileController::class)->group(function () {

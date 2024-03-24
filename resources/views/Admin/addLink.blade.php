@@ -20,7 +20,8 @@
             @csrf
             <div class="title-box">
                 <label for="title">Title:</label>
-                <input id="title" type="text" name="title" required onclick="changeStyleTitle()" onkeyup="onKeyUpTitle()">
+                <input id="title" type="text" name="title" required onclick="changeStyleTitle()"
+                    onkeyup="onKeyUpTitle()">
             </div>
             <div class="link-box">
                 <label for="link">YouTube Link:</label>
@@ -35,53 +36,69 @@
                     <option value="basketball">Basketball</option>
                 </select>
             </div>
+            <div class="live-box">
+                <label for="live">Live:</label>
+                <input type="text" name="live" id="live" onclick="changeStyleLive()" onkeyup="onKeyUpLive()" required>
+            </div>
             <div class="id-box">
                 <label for="country_id">Country Id:</label>
-                <input id="country_id" type="number" name="country_id" required onclick="changeStyleId()" onkeyup="onKeyUpId()">
+                <input id="country_id" type="number" name="country_id" required onclick="changeStyleId()"
+                    onkeyup="onKeyUpId()">
             </div>
             <button type="submit" class="addLink">Add Video</button>
         </form>
     </div>
     <script>
-        function changeStyleTitle() {
-            var titleInput = document.getElementById('title');
-            titleInput.classList.add('clicked-style');
-        }
+    function changeStyleTitle() {
+        var titleInput = document.getElementById('title');
+        titleInput.classList.add('clicked-style');
+    }
 
-        function onKeyUpTitle() {
-            var titleInput = document.getElementById('title');
-            titleInput.classList.add('clicked-style');
-        }
+    function onKeyUpTitle() {
+        var titleInput = document.getElementById('title');
+        titleInput.classList.add('clicked-style');
+    }
 
-        function changeStyleLink() {
-            var linkInput = document.getElementById('link');
-            linkInput.classList.add('clicked-style');
-        }
+    function changeStyleLink() {
+        var linkInput = document.getElementById('link');
+        linkInput.classList.add('clicked-style');
+    }
 
-        function onKeyUpLink() {
-            var linkInput = document.getElementById('link');
-            linkInput.classList.add('clicked-style');
-        }
+    function onKeyUpLink() {
+        var linkInput = document.getElementById('link');
+        linkInput.classList.add('clicked-style');
+    }
 
-        function changeStyleGame() {
-            var gameInput = document.getElementById('game');
-            gameInput.classList.add('clicked-style');
-        }
+    function changeStyleGame() {
+        var gameInput = document.getElementById('game');
+        gameInput.classList.add('clicked-style');
+    }
 
-        function onKeyUpGame() {
-            var gameInput = document.getElementById('game');
-            gameInput.classList.add('clicked-style');
-        }
+    function onKeyUpGame() {
+        var gameInput = document.getElementById('game');
+        gameInput.classList.add('clicked-style');
+    }
 
-        function changeStyleId() {
-            var idInput = document.getElementById('id');
-            idInput.classList.add('clicked-style');
-        }
+    function changeStyleLive() {
+        var liveInput = document.getElementById('live');
+        liveInput.classList.add('clicked-style');
+    }
 
-        function onKeyUpId() {
-            var idInput = document.getElementById('id');
-            idInput.classList.add('clicked-style');
-        }
+    function onKeyUpLive() {
+        var liveInput = document.getElementById('live');
+        liveInput.classList.add('clicked-style');
+    }
+
+
+    function changeStyleId() {
+        var idInput = document.getElementById('id');
+        idInput.classList.add('clicked-style');
+    }
+
+    function onKeyUpId() {
+        var idInput = document.getElementById('id');
+        idInput.classList.add('clicked-style');
+    }
     </script>
 </body>
 

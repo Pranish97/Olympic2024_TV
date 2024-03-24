@@ -7,6 +7,7 @@ use App\Models\Country;
 use App\Models\Link;
 use App\Models\Schedule;
 use App\Models\News;
+use App\Models\Player;
 
 class AdminController extends Controller
 {
@@ -122,6 +123,7 @@ class AdminController extends Controller
             'title' => 'required|string|max:255',
             'link' => 'required|url|max:255',
             'game' => 'required|string',
+            'live' => 'required|string',
             'country_id' => 'required|numeric',
         ]);
 
@@ -132,6 +134,7 @@ class AdminController extends Controller
             'link' => $request->link,
             'video_id' => $videoId,
             'game' => $request->game,
+            'live' => $request->live,
             'country_id' => $request->country_id,
         ]);
 
@@ -156,7 +159,8 @@ class AdminController extends Controller
             'title' => 'required|string|max:255',
             'link' => 'required|url|max:255',
             'game' => 'required|string',
-            'country_id' => 'required|numeric',
+            'live' => 'required|string',
+            'country_id' => 'required|numeric'
         ]);
 
         $videoId = $this->getYouTubeVideoId($request->link);
@@ -166,6 +170,7 @@ class AdminController extends Controller
         $link->link = $request->link;
         $link->video_id = $videoId;
         $link->game = $request->game;
+        $link->live = $request->live;
         $link->country_id = $request->country_id;
         $link->save();
 
@@ -351,5 +356,77 @@ class AdminController extends Controller
         $news = News::findOrFail($id);
         $news->delete();
         return redirect()->route('manage.news')->with('success', 'News deleted successfully!');
+    }
+
+    public function managePlayer()
+    {
+        $players = Player::all();
+        return view('admin.managePlayer', compact('players'));
+    }
+
+
+    public function player()
+    {
+        return view('admin.addPlayer');
+    }
+
+    public function addPlayer(Request $request)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'country' => 'required|string|max:255',
+            'game' => 'required|string|max:255',
+        ]);
+
+        $imageName = time() . '.' . $request->image->extension();
+        $request->image->move(public_path('images/players'), $imageName);
+
+        $player = new Player();
+        $player->name = $validatedData['name'];
+        $player->image = $imageName;
+        $player->country = $validatedData['country'];
+        $player->game = $validatedData['game'];
+        $player->save();
+
+        return redirect()->route('manage.player')->with('success', 'Player added successfully!');
+    }
+
+    public function editPlayer($id)
+    {
+        $player = Player::findOrFail($id);
+        return view('admin.editPlayer', compact('player'));
+    }
+
+    public function updatePlayer(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'image' => 'image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'country' => 'required|string|max:255',
+            'game' => 'required|string|max:255',
+        ]);
+
+        $player = Player::findOrFail($id);
+
+        if ($request->hasFile('image')) {
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('images/players'), $imageName);
+            $player->image = $imageName;
+        }
+
+        $player->name = $validatedData['name'];
+        $player->country = $validatedData['country'];
+        $player->game = $validatedData['game'];
+        $player->save();
+
+        return redirect()->route('manage.player')->with('success', 'Player updated successfully!');
+    }
+
+    public function deletePlayer($id)
+    {
+        $player = Player::findOrFail($id);
+        $player->delete();
+        return redirect()->route('manage.player')->with('success', 'Player deleted successfully!');
     }
 }

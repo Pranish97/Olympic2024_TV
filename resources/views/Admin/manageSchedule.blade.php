@@ -109,6 +109,12 @@
                         <a href="{{ route('manage.news') }}">Manage News</a>
                     </form>
                 </li>
+                <li>
+                    <form action="{{ route('manage.player') }}" method="GET">
+                        @csrf
+                        <a href="{{ route('manage.player') }}">Manage Players</a>
+                    </form>
+                </li>
             </ul>
         </div>
         <div class="add-schedule">
@@ -151,18 +157,15 @@
                     <td>{{ $schedule->time }}</td>
                     <td>{{ $schedule->date }}</td>
                     <td>
-                        <form action="{{ route('schedule.edit', $schedule->id) }}" method="GET"
-                            style="display: inline;">
+                        <form action="{{ route('schedule.edit', $schedule->id) }}" method="GET" style="display: inline;">
                             @csrf
                             <button type="submit" class="edit">Edit</button>
                         </form>
 
-                        <form action="{{ route('schedule.delete', $schedule->id) }}" method="POST"
-                            style="display: inline;">
+                        <form action="{{ route('schedule.delete', $schedule->id) }}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="delete"
-                                onclick="return confirm('Are you sure you want to delete this schedule?')">Delete</button>
+                            <button type="submit" class="delete" onclick="return confirm('Are you sure you want to delete this schedule?')">Delete</button>
                         </form>
                     </td>
 
@@ -174,9 +177,9 @@
 
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script>
-    $(document).ready(function() {
-        $('#myTable').DataTable();
-    });
+        $(document).ready(function() {
+            $('#myTable').DataTable();
+        });
     </script>
 </body>
 

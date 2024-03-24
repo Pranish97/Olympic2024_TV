@@ -119,6 +119,12 @@
                         <a href="{{ route('manage.news') }}">Manage News</a>
                     </form>
                 </li>
+                <li>
+                    <form action="{{ route('manage.player') }}" method="GET">
+                        @csrf
+                        <a href="{{ route('manage.player') }}">Manage Players</a>
+                    </form>
+                </li>
             </ul>
         </div>
         <div class="add-news">
@@ -156,8 +162,7 @@
                         <form action="{{ route('news.delete', $item->id) }}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="delete"
-                                onclick="return confirm('Are you sure you want to delete this news?')">Delete</button>
+                            <button type="submit" class="delete" onclick="return confirm('Are you sure you want to delete this news?')">Delete</button>
                         </form>
                     </td>
 
@@ -169,19 +174,19 @@
     </div>
     <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script>
-    $(document).ready(function() {
-        $('#myTable').DataTable();
+        $(document).ready(function() {
+            $('#myTable').DataTable();
 
-    });
+        });
     </script>
 </body>
 @if(session('success'))
 <script>
-toastr.options = {
-    "progressBar": true,
-    "closeButton": true,
-}
-toastr.success("{{ session('success') }}")
+    toastr.options = {
+        "progressBar": true,
+        "closeButton": true,
+    }
+    toastr.success("{{ session('success') }}")
 </script>
 @endif
 </body>

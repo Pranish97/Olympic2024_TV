@@ -11,5 +11,5 @@ class Link extends Model
     use HasFactory;
 
     protected $table = 'link';
-    protected $fillable = ['title', 'link', 'video_id', 'game', 'country_id'];
+    protected $fillable = ['title', 'link', 'video_id', 'game', 'country_id', 'live'];
 }

@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     </script>
-    <link rel="stylesheet" href="/css/admin/manageCountry.css">
+    <link rel="stylesheet" href="/css/admin/managePlayer.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <title>Data Manegement</title>
@@ -127,11 +127,11 @@
                 </li>
             </ul>
         </div>
-        <div class="add-country">
-            <form action="{{ route('countries.create') }}" method="GET">
+        <div class="add-player">
+            <form action="{{ route('player.create') }}" method="GET">
                 @csrf
-                <div class="add-country">
-                    <button type="submit">Add Country</button>
+                <div class="add-player">
+                    <button type="submit">Add Player</button>
                 </div>
             </form>
         </div>
@@ -140,39 +140,33 @@
                 <tr>
                     <th scope="col">Name</th>
                     <th scope="col">Image</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">Total Medal</th>
-                    <th scope="col">Gold Medal</th>
-                    <th scope="col">Silver Medal</th>
-                    <th scope="col">Bronze Medal</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Game</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($countries as $country)
+                @foreach($players as $player)
                 <tr>
-                    <td>{{ $country['name'] }}</td>
+                    <td>{{ $player->name }}</td>
                     <td>
-                        <img src="{{ asset('images/countries/' . $country->image) }}" alt="{{ $country->name }}" />
+                        <img src="{{ asset('images/players/' . $player->image) }}" alt="{{ $player->title }}">
+
                     </td>
-                    <td>{{ $country['description'] }}</td>
-                    <td>{{ $country['total_medal'] }}</td>
-                    <td>{{ $country['gold_medal'] }}</td>
-                    <td>{{ $country['silver_medal'] }}</td>
-                    <td>{{ $country['bronze_medal'] }}</td>
+                    <td>{{ $player->country }}</td>
+                    <td>{{ $player->game }}</td>
                     <td>
-                        <form action="{{ route('country.edit', $country->id) }}" method="GET" style="display: inline;">
+                        <form action="{{ route('player.edit', $player->id) }}" method="GET" style="display: inline;">
                             @csrf
                             <button type="submit" class="edit">Edit</button>
                         </form>
 
-                        <form action="{{ route('country.delete', $country->id) }}" method="POST" style="display: inline;">
+                        <form action="{{ route('player.delete', $player->id) }}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="delete" onclick="return confirm('Are you sure you want to delete this country?')">Delete</button>
+                            <button type="submit" class="delete" onclick="return confirm('Are you sure you want to delete this news?')">Delete</button>
                         </form>
                     </td>
-
                 </tr>
                 @endforeach
             </tbody>
@@ -180,7 +174,6 @@
 
 
     </div>
-
     <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script>
         $(document).ready(function() {
@@ -198,5 +191,6 @@
     toastr.success("{{ session('success') }}")
 </script>
 @endif
+</body>
 
 </html>
