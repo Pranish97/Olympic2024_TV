@@ -19,6 +19,7 @@ class CreateLinkTable extends Migration
             $table->string('link');
             $table->string('video_id');
             $table->string('game');
+            $table->string('live');
             $table->unsignedBigInteger('country_id');
             $table->foreign('country_id')
                 ->references('id')

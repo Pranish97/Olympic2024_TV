@@ -37,6 +37,12 @@
                 </select>
             </div>
 
+            <div class="live-box">
+                <label for="live">Live:</label>
+                <input type="text" class="form-control" id="live" name="live" value="{{ $link->live }}" required
+                    onclick="changeStyleLive()" onkeyup="onKeyUpLive()">
+            </div>
+
             <div class="id-box">
                 <label for="country_id">Country ID:</label>
                 <input type="text" class="form-control" id="country_id" name="country_id"
@@ -86,6 +92,17 @@
         var gameInput = document.getElementById('game');
         gameInput.classList.add('clicked-style');
     }
+
+    function changeStyleLive() {
+        var liveInput = document.getElementById('live');
+        liveInput.classList.add('clicked-style');
+    }
+
+    function onKeyUpLive() {
+        var liveInput = document.getElementById('live');
+        liveInput.classList.add('clicked-style');
+    }
+
 
     function changeStyleCountryId() {
         var countryIdInput = document.getElementById('country_id');
