@@ -47,7 +47,7 @@
                 <label for="game">Game:</label>
                 <select id="game" name="game">
                     <option value="football">Football</option>
-                    <option value="athletics">Athletics</option>
+                    <option value="race">Race</option>
                     <option value="swimming">Swimming</option>
                     <option value="basketball">Basketball</option>
                 </select>

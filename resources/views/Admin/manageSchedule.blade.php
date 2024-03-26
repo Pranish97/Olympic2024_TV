@@ -50,9 +50,9 @@
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="/athletic">
+                        <a href="/race">
                             <i class='bx bx-run icon'></i>
-                            <span class="text nav-text">Athletics</span>
+                            <span class="text nav-text">Race</span>
                         </a>
                     </li>
                     <li class="nav-link">
