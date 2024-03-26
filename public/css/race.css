@@ -203,6 +203,14 @@ header .image-text .header-text{
     margin-top: 30px;
 }
 
+.container .videos a{
+    color: black;
+}
+
+.container .videos a:hover{
+    color: gray;
+}
+
 .container .videos .video-box{
     width: 351px;
     height: 270px;

@@ -336,6 +336,16 @@ header .image-text .header-text{
 .container .videos h2{
     margin-left: 10px;
 }
+
+.container .videos a{
+    color: black;
+}
+
+.container .videos a:hover{
+    color: gray;
+}
+
+
 .container .videos .video-box{
     width: 351px;
     height: 270px;
