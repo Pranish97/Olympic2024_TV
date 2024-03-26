@@ -12,4 +12,9 @@ class Link extends Model
 
     protected $table = 'link';
     protected $fillable = ['title', 'link', 'video_id', 'game', 'country_id', 'live'];
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

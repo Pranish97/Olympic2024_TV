@@ -9,6 +9,7 @@ use App\Http\Controllers\FootballController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RaceController;
 use App\Http\Controllers\SwimmingController;
+use App\Http\Controllers\VideoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,12 @@ Route::controller(RaceController::class)->group(function () {
 Route::controller(SwimmingController::class)->group(function () {
     Route::get('/swimming', 'swimming')->name('swimming');
 });
+
+Route::controller(VideoController::class)->group(function () {
+    Route::get('/video/{videoId}', 'show')->name('video.show');
+    Route::post('/comments', 'store')->name('comments.store');
+});
+
 
 Route::controller(AdminController::class)->group(function () {
     Route::get('/manage/countries', 'manageCountry')->name('manage.countries');

@@ -50,4 +50,9 @@ class User extends Authenticatable
         if (trim($password) === '') return;
         $this->attributes['password'] =  Hash::make($password);
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

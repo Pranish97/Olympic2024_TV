@@ -104,10 +104,12 @@
         <div class="videos">
             <h2>Videos</h2>
             @foreach ($links as $link)
-            <div class="video-box">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$link->video_id}}?AIzaSyDcKnS-6ylja0hFrNvQcp2qlWmQFr1t9Qo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                <p>{{ $link->title }}</p>
-            </div>
+            <a href="{{ route('video.show', ['videoId' => $link->id]) }}">
+                <div class="video-box">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $link->video_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <p>{{ $link->title }}</p>
+                </div>
+            </a>
             @endforeach
         </div>
     </div>
