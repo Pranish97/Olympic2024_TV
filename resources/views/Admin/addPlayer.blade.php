@@ -24,8 +24,7 @@
             </div>
             <div class="image-box">
                 <label for="image">Image:</label>
-                <input type="file" name="image" id="image" onclick="changeStyleImage()" onchange="onFileSelect(this)"
-                    required>
+                <input type="file" name="image" id="image" onclick="changeStyleImage()" onchange="onFileSelect(this)" required>
             </div>
             <div class="country-box">
                 <label for="country">Country:</label>
@@ -47,7 +46,7 @@
                 <label for="game">Game:</label>
                 <select id="game" name="game">
                     <option value="football">Football</option>
-                    <option value="athletics">Athletics</option>
+                    <option value="race">Race</option>
                     <option value="swimming">Swimming</option>
                     <option value="basketball">Basketball</option>
                 </select>
@@ -57,15 +56,15 @@
     </div>
 
     <script>
-    function changeStyleName() {
-        var nameInput = document.getElementById('name');
-        nameInput.classList.add('clicked-style');
-    }
+        function changeStyleName() {
+            var nameInput = document.getElementById('name');
+            nameInput.classList.add('clicked-style');
+        }
 
-    function onKeyUpName() {
-        var nameInput = document.getElementById('name');
-        nameInput.classList.add('clicked-style');
-    }
+        function onKeyUpName() {
+            var nameInput = document.getElementById('name');
+            nameInput.classList.add('clicked-style');
+        }
     </script>
 
 </body>

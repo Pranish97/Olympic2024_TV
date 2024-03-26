@@ -8,9 +8,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     </script>
-    <link rel="stylesheet" href="/css/data.css">
+    <link rel="stylesheet" href="css/football.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Data Manegement</title>
+    <title>Welcome to FunOlympic TV</title>
 </head>
 
 <body>
@@ -91,42 +91,34 @@
         </div>
     </nav>
     <div class="container">
-        <div class="nav">
-            <ul class="data-links">
-                <li class="">
-                    <form action="{{ route('manage.link') }}" method="GET">
-                        @csrf
-                        <a href="{{ route('manage.link') }}">Manage Link</a>
-                    </form>
-                </li>
-                <li>
-                    <form action="{{ route('manage.countries') }}" method="GET">
-                        @csrf
-                        <a href="{{ route('manage.countries') }}">Manage Country</a>
-                    </form>
-
-                </li>
-                <li>
-                    <form action="{{ route('manage.schedule') }}" method="GET">
-                        @csrf
-                        <a href="{{ route('manage.schedule') }}">Manage Schedule</a>
-                    </form>
-                </li>
-                <li>
-                    <form action="{{ route('manage.news') }}" method="GET">
-                        @csrf
-                        <a href="{{ route('manage.news') }}">Manage News</a>
-                    </form>
-                </li>
-                <li>
-                    <form action="{{ route('manage.player') }}" method="GET">
-                        @csrf
-                        <a href="{{ route('manage.player') }}">Manage Players</a>
-                    </form>
-                </li>
-            </ul>
+        <div class="players">
+            <h2>Players</h2>
+            @foreach($players as $player)
+            <div class="player-box">
+                <img src="{{ asset('images/players/' . $player->image) }}" alt="{{ $player->name }}">
+                <p class="name">{{ $player->name }}</p>
+                <p>{{ $player->country }}</p>
+            </div>
+            @endforeach
+        </div>
+        <div class="videos">
+            <h2>Videos</h2>
+            @foreach ($links as $link)
+            <div class="video-box">
+                <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/{{$link->video_id}}?AIzaSyDcKnS-6ylja0hFrNvQcp2qlWmQFr1t9Qo"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+                <p>{{ $link->title }}</p>
+            </div>
+            @endforeach
         </div>
     </div>
+
+
+
 </body>
+
 
 </html>

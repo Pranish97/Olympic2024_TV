@@ -31,7 +31,7 @@
                 <label for="game">Game:</label>
                 <select id="game" name="game">
                     <option value="football" {{ $link->game === 'football' ? 'selected' : '' }}>Football</option>
-                    <option value="athletics" {{ $link->game === 'athletics' ? 'selected' : '' }}>Athletics</option>
+                    <option value="race" {{ $link->game === 'race' ? 'selected' : '' }}>Race</option>
                     <option value="swimming" {{ $link->game === 'swimming' ? 'selected' : '' }}>Swimming</option>
                     <option value="basketball" {{ $link->game === 'basketball' ? 'selected' : '' }}>Basketball</option>
                 </select>
