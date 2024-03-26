@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     </script>
-    <link rel="stylesheet" href="css/football.css">
+    <link rel="stylesheet" href="css/race.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Welcome to FunOlympic TV</title>
 </head>
@@ -55,7 +55,7 @@
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="/dashboar">
+                        <a href="/swimming">
                             <i class='bx bx-swim icon'></i>
                             <span class="text nav-text">Swimming</span>
                         </a>
@@ -105,23 +105,12 @@
             <h2>Videos</h2>
             @foreach ($links as $link)
             <div class="video-box">
-<<<<<<< HEAD
-                <iframe width="560" height="315"
-                    src="https://www.youtube.com/embed/{{$link->video_id}}?AIzaSyDcKnS-6ylja0hFrNvQcp2qlWmQFr1t9Qo"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-=======
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$link->video_id}}?AIzaSyDcKnS-6ylja0hFrNvQcp2qlWmQFr1t9Qo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
->>>>>>> 74e58c8f09944e43049e2de322840ee122cccb85
                 <p>{{ $link->title }}</p>
             </div>
             @endforeach
         </div>
     </div>
-
-
-
 </body>
 
 

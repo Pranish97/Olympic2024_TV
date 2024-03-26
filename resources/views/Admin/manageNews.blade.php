@@ -56,7 +56,7 @@
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="/dashboar">
+                        <a href="/swimming">
                             <i class='bx bx-swim icon'></i>
                             <span class="text nav-text">Swimming</span>
                         </a>

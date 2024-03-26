@@ -55,7 +55,7 @@
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="/dashboar">
+                        <a href="/swimming">
                             <i class='bx bx-swim icon'></i>
                             <span class="text nav-text">Swimming</span>
                         </a>
@@ -105,7 +105,11 @@
             <h2>Videos</h2>
             @foreach ($links as $link)
             <div class="video-box">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$link->video_id}}?AIzaSyDcKnS-6ylja0hFrNvQcp2qlWmQFr1t9Qo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="560" height="315"
+                    src="https://www.youtube.com/embed/{{$link->video_id}}?AIzaSyDcKnS-6ylja0hFrNvQcp2qlWmQFr1t9Qo"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
                 <p>{{ $link->title }}</p>
             </div>
             @endforeach
