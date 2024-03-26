@@ -8,9 +8,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     </script>
-    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="css/swimming.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Profile</title>
+    <title>Welcome to FunOlympic TV</title>
 </head>
 
 <body>
@@ -91,26 +91,27 @@
         </div>
     </nav>
     <div class="container">
-        <div class="name">
-            <img src="images/profile.jpg" alt="">
-            <p>{{ $user->name }}</p>
+        <div class="players">
+            <h2>Players</h2>
+            @foreach($players as $player)
+            <div class="player-box">
+                <img src="{{ asset('images/players/' . $player->image) }}" alt="{{ $player->name }}">
+                <p class="name">{{ $player->name }}</p>
+                <p>{{ $player->country }}</p>
+            </div>
+            @endforeach
         </div>
-        <h2>Personal Information</h2>
-
-        <div class="email">
-            <h4>Email</h4>
-            <p>{{ $user->email }}</p>
-        </div>
-        <div class="country">
-            <h4>Country</h4>
-            <p>{{ $user->country }}</p>
-        </div>
-        <div class="number">
-            <h4>Phone Number</h4>
-            <p>{{ $user->phone_number }}</p>
+        <div class="videos">
+            <h2>Videos</h2>
+            @foreach ($links as $link)
+            <div class="video-box">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$link->video_id}}?AIzaSyDcKnS-6ylja0hFrNvQcp2qlWmQFr1t9Qo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <p>{{ $link->title }}</p>
+            </div>
+            @endforeach
         </div>
     </div>
-
 </body>
+
 
 </html>
