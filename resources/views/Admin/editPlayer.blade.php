@@ -19,14 +19,12 @@
             @method('PUT')
             <div class="name-box">
                 <label for="name">Name:</label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ $player->name }}" required
-                    onclick="changeStyleName()" onkeyup="onKeyUpName()">
+                <input type="text" class="form-control" id="name" name="name" value="{{ $player->name }}" required onclick="changeStyleName()" onkeyup="onKeyUpName()">
             </div>
             <div class="image-box">
                 <label for="image">Image:</label>
                 <input type="file" class="form-control-file" id="image" name="image" accept="image/*">
-                <img src="{{ asset('images/players/' . $player->image) }}" alt="{{ $player->name }}"
-                    style="max-width: 200px; margin-top: 10px;">
+                <img src="{{ asset('images/players/' . $player->image) }}" alt="{{ $player->name }}" style="max-width: 200px; margin-top: 10px;">
             </div>
             <div class="country-box">
                 <label for="country">Country:</label>
@@ -49,7 +47,7 @@
                 <label for="game">Game:</label>
                 <select id="game" name="game">
                     <option value="football" {{ $player->game === 'football' ? 'selected' : '' }}>Football</option>
-                    <option value="athletics" {{ $player->game === 'athletics' ? 'selected' : '' }}>Athletics</option>
+                    <option value="race" {{ $player->game === 'race' ? 'selected' : '' }}>Race</option>
                     <option value="swimming" {{ $player->game === 'swimming' ? 'selected' : '' }}>Swimming</option>
                     <option value="basketball" {{ $player->game === 'basketball' ? 'selected' : '' }}>Basketball
                     </option>
@@ -61,15 +59,15 @@
     </div>
 
     <script>
-    function changeStyleName() {
-        var nameInput = document.getElementById('name');
-        nameInput.classList.add('clicked-style');
-    }
+        function changeStyleName() {
+            var nameInput = document.getElementById('name');
+            nameInput.classList.add('clicked-style');
+        }
 
-    function onKeyUpName() {
-        var nameInput = document.getElementById('name');
-        nameInput.classList.add('clicked-style');
-    }
+        function onKeyUpName() {
+            var nameInput = document.getElementById('name');
+            nameInput.classList.add('clicked-style');
+        }
     </script>
 </body>
 

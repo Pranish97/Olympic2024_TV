@@ -6,7 +6,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FootballController;
+use App\Http\Controllers\AthleticController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RaceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +38,10 @@ Route::controller(DashboardController::class)->group(function () {
 
 Route::controller(FootballController::class)->group(function () {
     Route::get('/football', 'football')->name('football');
+});
+
+Route::controller(RaceController::class)->group(function () {
+    Route::get('/race', 'race')->name('race');
 });
 
 Route::controller(AdminController::class)->group(function () {
