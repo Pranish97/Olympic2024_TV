@@ -105,11 +105,15 @@
             <h2>Videos</h2>
             @foreach ($links as $link)
             <div class="video-box">
+<<<<<<< HEAD
                 <iframe width="560" height="315"
                     src="https://www.youtube.com/embed/{{$link->video_id}}?AIzaSyDcKnS-6ylja0hFrNvQcp2qlWmQFr1t9Qo"
                     title="YouTube video player" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen></iframe>
+=======
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{$link->video_id}}?AIzaSyDcKnS-6ylja0hFrNvQcp2qlWmQFr1t9Qo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+>>>>>>> 74e58c8f09944e43049e2de322840ee122cccb85
                 <p>{{ $link->title }}</p>
             </div>
             @endforeach

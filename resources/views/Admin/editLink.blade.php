@@ -19,13 +19,11 @@
             @method('PUT')
             <div class="title-box">
                 <label for="title">Title:</label>
-                <input type="text" class="form-control" id="title" name="title" value="{{ $link->title }}" required
-                    onclick="changeStyleTitle()" onkeyup="onKeyUpTitle()">
+                <input type="text" class="form-control" id="title" name="title" value="{{ $link->title }}" required onclick="changeStyleTitle()" onkeyup="onKeyUpTitle()">
             </div>
             <div class="link-box">
                 <label for="link">Link:</label>
-                <input type="text" class="form-control" id="link" name="link" value="{{ $link->link }}" required
-                    onclick="changeStyleLink()" onkeyup="onKeyUpLink()">
+                <input type="text" class="form-control" id="link" name="link" value="{{ $link->link }}" required onclick="changeStyleLink()" onkeyup="onKeyUpLink()">
             </div>
             <div class="game-box">
                 <label for="game">Game:</label>
@@ -39,80 +37,77 @@
 
             <div class="live-box">
                 <label for="live">Live:</label>
-                <input type="text" class="form-control" id="live" name="live" value="{{ $link->live }}" required
-                    onclick="changeStyleLive()" onkeyup="onKeyUpLive()">
+                <input type="text" class="form-control" id="live" name="live" value="{{ $link->live }}" required onclick="changeStyleLive()" onkeyup="onKeyUpLive()">
             </div>
 
             <div class="id-box">
                 <label for="country_id">Country ID:</label>
-                <input type="text" class="form-control" id="country_id" name="country_id"
-                    value="{{ $link->country_id }}" required onclick="changeStyleCountryId()"
-                    onkeyup="onKeyUpCountryId()">
+                <input type="text" class="form-control" id="country_id" name="country_id" value="{{ $link->country_id }}" required onclick="changeStyleCountryId()" onkeyup="onKeyUpCountryId()">
             </div>
             <button type="submit" class="addLink">Update</button>
         </form>
     </div>
     <script>
-    function changeStyleTitle() {
-        var titleInput = document.getElementById('title');
-        titleInput.classList.add('clicked-style');
-    }
+        function changeStyleTitle() {
+            var titleInput = document.getElementById('title');
+            titleInput.classList.add('clicked-style');
+        }
 
-    function onKeyUpTitle() {
-        var titleInput = document.getElementById('title');
-        titleInput.classList.add('clicked-style');
-    }
+        function onKeyUpTitle() {
+            var titleInput = document.getElementById('title');
+            titleInput.classList.add('clicked-style');
+        }
 
-    function changeStyleLink() {
-        var linkInput = document.getElementById('link');
-        linkInput.classList.add('clicked-style');
-    }
+        function changeStyleLink() {
+            var linkInput = document.getElementById('link');
+            linkInput.classList.add('clicked-style');
+        }
 
-    function onKeyUpLink() {
-        var linkInput = document.getElementById('link');
-        linkInput.classList.add('clicked-style');
-    }
+        function onKeyUpLink() {
+            var linkInput = document.getElementById('link');
+            linkInput.classList.add('clicked-style');
+        }
 
-    function changeStyleVideoId() {
-        var videoIdInput = document.getElementById('video_id');
-        videoIdInput.classList.add('clicked-style');
-    }
+        function changeStyleVideoId() {
+            var videoIdInput = document.getElementById('video_id');
+            videoIdInput.classList.add('clicked-style');
+        }
 
-    function onKeyUpVideoId() {
-        var videoIdInput = document.getElementById('video_id');
-        videoIdInput.classList.add('clicked-style');
-    }
+        function onKeyUpVideoId() {
+            var videoIdInput = document.getElementById('video_id');
+            videoIdInput.classList.add('clicked-style');
+        }
 
-    function changeStyleGame() {
-        var gameInput = document.getElementById('game');
-        gameInput.classList.add('clicked-style');
-    }
+        function changeStyleGame() {
+            var gameInput = document.getElementById('game');
+            gameInput.classList.add('clicked-style');
+        }
 
-    function onKeyUpGame() {
-        var gameInput = document.getElementById('game');
-        gameInput.classList.add('clicked-style');
-    }
+        function onKeyUpGame() {
+            var gameInput = document.getElementById('game');
+            gameInput.classList.add('clicked-style');
+        }
 
-    function changeStyleLive() {
-        var liveInput = document.getElementById('live');
-        liveInput.classList.add('clicked-style');
-    }
+        function changeStyleLive() {
+            var liveInput = document.getElementById('live');
+            liveInput.classList.add('clicked-style');
+        }
 
-    function onKeyUpLive() {
-        var liveInput = document.getElementById('live');
-        liveInput.classList.add('clicked-style');
-    }
+        function onKeyUpLive() {
+            var liveInput = document.getElementById('live');
+            liveInput.classList.add('clicked-style');
+        }
 
 
-    function changeStyleCountryId() {
-        var countryIdInput = document.getElementById('country_id');
-        countryIdInput.classList.add('clicked-style');
-    }
+        function changeStyleCountryId() {
+            var countryIdInput = document.getElementById('country_id');
+            countryIdInput.classList.add('clicked-style');
+        }
 
-    function onKeyUpCountryId() {
-        var countryIdInput = document.getElementById('country_id');
-        countryIdInput.classList.add('clicked-style');
-    }
+        function onKeyUpCountryId() {
+            var countryIdInput = document.getElementById('country_id');
+            countryIdInput.classList.add('clicked-style');
+        }
     </script>
 </body>
 

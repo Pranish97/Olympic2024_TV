@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FootballController;
+use App\Http\Controllers\AthleticController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RaceController;
 
