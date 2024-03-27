@@ -154,89 +154,52 @@ header .image-text .header-text{
     margin-left: 250px;
 }
 
-.container .video-box .live-overlay {
+.container .videos{
+    width: 100%;
+    height: auto;
+}
+
+.container .videos h2{
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.container .videos a{
+    color: black;
+}
+
+.container .videos a:hover{
+    color: gray;
+}
+
+.container .videos .video-box{
+    width: 351px;
+    height: 270px;
+    border: 1px solid black;
+    text-align: center;
+    align-items: center;
+    float: left;
+    margin-left: 40px;
+    margin-top:20px;
+    position: relative;
+}
+
+.container .videos .video-box .live-overlay {
     position: absolute;
     top: 10px;
-    left: 1200px;
+    left: 10px;
     background-color: red;
     color: white;
     padding: 5px 10px;
     z-index: 1;
 }
 
-.container .video-box iframe{
-    width: 800px;
-    height: 350px;
-    margin-left: 240px;
+.container .videos iFrame{
+    width: 350px;
+    height: 210px;
 }
 
-.container .video-box p{
-   text-align: center;
-   font-weight: 600;
-   font-size: 20px;
-   margin-top: 10px;
+.container .videos p{
+    margin-top: 8px;
 }
 
-.container .comment-box{
-        height: 250px; 
-        border: 1px solid #ccc;
-        padding: 10px;
-        margin-top: 10px;
-        overflow-y: auto;
-}
-
-.container .comment-box h3{
-    margin-top: 5px;
-    margin-left: 10px;
-}
-
-.container .comment-box ul {
-    list-style-type: none;
-    padding: 0;
-    width: 100%;
-}
-
-.container .comment-box li {
-    height: 50px;
-}
-
-.container .comment-box img {
-    width: 20px;
-    height: 20px;
-    border-radius: 30px;
-    border: 1px solid #000000;
-    margin-top: 10px;
-    float: left;
-    margin-left: 30px;
-}
-
-.container .comment-box strong {
-    margin-top: 10px;
-    margin-left: 7px;
-    width: 108px;
-    display: block;
-    float: left;
-}
-
-.container .comment-box p {
-    margin-top: 15px;
-    width: 1074px;
-    margin-left: 60px;
-    display: block;
-}
-
-.container .comment{
-    width: 90%;
-    height: 50px;
-    padding-left: 20px;
-}
-
-.container .submit{
-    width: 110px;
-    height: 50px;
-}
-
-.container .submit:hover{
-    background-color: var(--primary-color);
-    color: var(--primary-color-light);
-}

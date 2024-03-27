@@ -7,6 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BasketballController;
 use App\Http\Controllers\FootballController;
+use App\Http\Controllers\LiveController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RaceController;
 use App\Http\Controllers\SwimmingController;
@@ -52,6 +53,10 @@ Route::controller(SwimmingController::class)->group(function () {
 
 Route::controller(BasketballController::class)->group(function () {
     Route::get('/basketball', 'basketball')->name('basketball');
+});
+
+Route::controller(LiveController::class)->group(function () {
+    Route::get('/live', 'live')->name('live');
 });
 
 

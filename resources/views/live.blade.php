@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     </script>
-    <link rel="stylesheet" href="/css/video.css">
+    <link rel="stylesheet" href="css/live.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Welcome to FunOlympic TV</title>
 </head>
@@ -91,35 +91,19 @@
         </div>
     </nav>
     <div class="container">
-        <div class="video-box">
-            @if($video->live == 'Yes')
-            <p class="live-overlay">Live</p>
-            @endif
-            <iframe width=" 560" height="315" src="https://www.youtube.com/embed/{{ $video->video_id }}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <p>{{ $video->title }}</p>
+        <div class="videos">
+            <h2>Live</h2>
+            @foreach ($links as $link)
+            <a href="{{ route('video.show', ['videoId' => $link->id]) }}">
+                <div class="video-box">
+                    <p class="live-overlay">Live</p>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $link->video_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <p>{{ $link->title }}</p>
+                </div>
+            </a>
+            @endforeach
         </div>
-
-        <div class="comment-box">
-            <h3>Comments</h3>
-            <ul>
-                @foreach($comments as $comment)
-                <li>
-                    <img src="/images/profile.jpg" />
-                    <strong>{{ $comment->user->name }}</strong><br>
-                    <p> {{ $comment->feedback }}</p>
-                </li>
-                @endforeach
-            </ul>
-        </div>
-        <form action="{{ route('comments.store') }}" method="POST">
-            @csrf
-            <input type="hidden" name="link_id" value="{{ $linkId }}">
-            <input type="text" name="feedback" class="comment" placeholder="Enter your comment" required>
-            <button type="submit" class="submit">Submit</button>
-        </form>
-
     </div>
-
 </body>
 
 
