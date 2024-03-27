@@ -15,6 +15,7 @@ class VideoController extends Controller
         $linkId = $video->id;
         $comments = Comment::where('link_id', $videoId)->with('user')->get();
 
+
         return view('video', ['video' => $video, 'linkId' => $linkId, 'comments' => $comments]);
     }
 
