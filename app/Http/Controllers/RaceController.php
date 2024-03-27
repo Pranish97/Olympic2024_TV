@@ -10,7 +10,9 @@ class RaceController extends Controller
 {
     public function race()
     {
-        $links = Link::where('game', 'race')->get();
+        $links = Link::where('game', 'race')
+            ->orderByRaw("live = 'Yes' DESC, created_at DESC")
+            ->get();
         $players = Player::where('game', 'race')->get();
 
         return view('race', compact('links', 'players'));
