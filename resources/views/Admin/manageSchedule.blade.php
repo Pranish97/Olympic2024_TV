@@ -157,15 +157,18 @@
                     <td>{{ $schedule->time }}</td>
                     <td>{{ $schedule->date }}</td>
                     <td>
-                        <form action="{{ route('schedule.edit', $schedule->id) }}" method="GET" style="display: inline;">
+                        <form action="{{ route('schedule.edit', $schedule->id) }}" method="GET"
+                            style="display: inline;">
                             @csrf
                             <button type="submit" class="edit">Edit</button>
                         </form>
 
-                        <form action="{{ route('schedule.delete', $schedule->id) }}" method="POST" style="display: inline;">
+                        <form action="{{ route('schedule.delete', $schedule->id) }}" method="POST"
+                            style="display: inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="delete" onclick="return confirm('Are you sure you want to delete this schedule?')">Delete</button>
+                            <button type="submit" class="delete"
+                                onclick="return confirm('Are you sure you want to delete this schedule?')">Delete</button>
                         </form>
                     </td>
 
@@ -175,12 +178,22 @@
         </table>
     </div>
 
+
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#myTable').DataTable();
-        });
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+    });
     </script>
+    @if(session('success'))
+    <script>
+    toastr.options = {
+        "progressBar": true,
+        "closeButton": true,
+    }
+    toastr.success("{{ session('success') }}")
+    </script>
+    @endif
 </body>
 
 </html>

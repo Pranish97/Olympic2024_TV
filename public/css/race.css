@@ -220,6 +220,17 @@ header .image-text .header-text{
     float: left;
     margin-left: 40px;
     margin-top:20px;
+    position: relative;
+}
+
+.container .videos .video-box .live-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    z-index: 1;
 }
 
 .container .videos iFrame{

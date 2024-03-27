@@ -15,7 +15,7 @@ class DashboardController extends Controller
     public function dashboard()
     {
         $countries = Country::all();
-        $links = Link::all();
+        $links = Link::orderByRaw("live = 'Yes' DESC, created_at DESC")->get();
         $schedules = Schedule::all();
         $news = News::all();
 

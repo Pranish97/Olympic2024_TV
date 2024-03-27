@@ -10,7 +10,9 @@ class SwimmingController extends Controller
 {
     public function swimming()
     {
-        $links = Link::where('game', 'swimming')->get();
+        $links = Link::where('game', 'swimming')
+            ->orderByRaw("live = 'Yes' DESC, created_at DESC")
+            ->get();
         $players = Player::where('game', 'swimming')->get();
 
         return view('race', compact('links', 'players'));

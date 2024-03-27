@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BasketballController;
 use App\Http\Controllers\FootballController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RaceController;
@@ -48,6 +49,11 @@ Route::controller(RaceController::class)->group(function () {
 Route::controller(SwimmingController::class)->group(function () {
     Route::get('/swimming', 'swimming')->name('swimming');
 });
+
+Route::controller(BasketballController::class)->group(function () {
+    Route::get('/basketball', 'basketball')->name('basketball');
+});
+
 
 Route::controller(VideoController::class)->group(function () {
     Route::get('/video/{videoId}', 'show')->name('video.show');
